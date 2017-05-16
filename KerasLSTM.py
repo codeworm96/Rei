@@ -22,7 +22,7 @@ class KerasLSTM(Model):
 
     # Load the model from file
     def load(self, filename):
-        self.model = load_model("model.h5")
+        self.model = load_model(filename)
 
     # Save the model to file
     def save(self, filename):
