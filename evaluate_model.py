@@ -8,8 +8,8 @@ from keras.preprocessing import sequence
 from WordMap import WordMap
 from KerasLSTM import KerasLSTM
 
-wordmap = WordMap()
-wordmap.load("word.map")
+#wordmap = WordMap()
+#wordmap.load("word.map")
 
 model = KerasLSTM()
 '''
