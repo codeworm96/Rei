@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import jieba
+import pickle
 
 from keras.preprocessing import sequence
 
@@ -11,7 +12,7 @@ wordmap = WordMap()
 wordmap.load("word.map")
 
 model = KerasLSTM()
-
+'''
 neg=pd.read_excel('neg.xls',header=None,index=None)
 pos=pd.read_excel('pos.xls',header=None,index=None)
 
@@ -24,7 +25,8 @@ pn['words'] = pn[0].apply(cw)
 
 get_sent = lambda x: [wordmap.lookup(w) for w in x]
 pn['sent'] = pn['words'].apply(get_sent)
-
+'''
+pn = pickle.load(open('./data','rb'))
 maxlen = 100
 print("Pad sequences (samples x time)")
 pn['sent'] = list(sequence.pad_sequences(pn['sent'], maxlen=maxlen))
