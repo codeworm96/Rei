@@ -23,7 +23,9 @@ def analyze(uid):
         l = len(w['comments'])
         w['comments_sentiment'] = res[0:l]
         res = res[l:]
-    return jsonify(weibo)
+    response = jsonify(weibo)
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
