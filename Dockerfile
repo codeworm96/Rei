@@ -9,7 +9,7 @@ RUN apt-get update && \
 
 COPY . .
 
-RUN pip3 install jieba flask requests tensorflow keras pandas h5py
+RUN pip3 install jieba flask requests tensorflow keras pandas h5py gensim
 
 ENV LANG C.UTF-8
 

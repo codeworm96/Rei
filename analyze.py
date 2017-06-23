@@ -14,7 +14,7 @@ def analyze(data, model_select):
     result=[]
     if model_select==0:
         wordmap = WordMap()
-        wordmap.load("Word.map")
+        wordmap.load("word.map")
         model = KerasLSTM()
         model.load("model.h5")
         toTrain=[]
